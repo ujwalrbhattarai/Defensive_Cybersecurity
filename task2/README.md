@@ -1,278 +1,186 @@
-# OWASP Juice Shop Security Testing Report
+<img width="952" height="987" alt="Screenshot 2025-10-17 213524" src="https://github.com/user-attachments/assets/f9d21308-730e-4adf-9931-514310aef67f" /><img width="954" height="380" alt="Screenshot 2025-10-17 195816" src="https://github.com/user-attachments/assets/5e678fab-7078-451c-91b0-2db707f0b8ad" />
+Task 2 – Web Login Testing (OWASP Juice Shop)
 
-## Table of Contents
+Target: https://preview.owasp-juice.shop
 
-1. [Introduction](#introduction)
-2. [Project Overview](#project-overview)
-3. [Testing Environment Setup](#testing-environment-setup)
-4. [Security Testing Methodology](#security-testing-methodology)
-5. [Vulnerabilities Discovered](#vulnerabilities-discovered)
-   - 5.1 [Initial Reconnaissance](#51-initial-reconnaissance)
-   - 5.2 [Authentication Testing](#52-authentication-testing)
-   - 5.3 [Network Analysis](#53-network-analysis)
-6. [Tools Used](#tools-used)
-7. [Detailed Analysis](#detailed-analysis)
-8. [Recommendations](#recommendations)
-9. [Conclusion](#conclusion)
+Tool: Burp Suite Community Edition
+Summary: Captured and replayed the login request using Burp Repeater and tested several payloads manually. No vulnerabilities found in the documented attempts.
 
----
+Table of contents
 
-## Introduction
+Overview
 
-This repository documents a comprehensive security testing exercise conducted on the OWASP Juice Shop application. OWASP Juice Shop is an intentionally vulnerable web application designed for security training and awareness purposes.
+What I did
 
-**Date:** October 17, 2025  
-**Testing Type:** Web Application Security Assessment  
-**Target:** OWASP Juice Shop Application  
+Steps with screenshots & captions
 
----
+Payloads tried
 
-## Project Overview
+Observations
 
-The primary objective of this security assessment is to:
+Findings
 
-- Identify common web application vulnerabilities
-- Analyze authentication mechanisms
-- Study network traffic patterns
-- Understand defensive security measures
-- Document findings for educational purposes
+Suggestions
 
----
+Appendix — full screenshot list
 
-## Testing Environment Setup
+Overview
 
-### Initial Setup
+This repository documents a manual testing session focused on the login flow of the Juice Shop preview. I captured the login POST (JSON), edited the password value in Burp Repeater, resent requests with a set of payloads, and inspected the responses. I recorded each step with screenshots — those are embedded below.
 
-The testing environment consists of:
-- OWASP Juice Shop application instance
-- Browser Developer Tools (Network Tab, Console)
-- Security testing tools for network analysis
+What I did
 
-![Initial Setup - Application Launch](Screenshot%202025-10-17%20193029.png)
-*Figure 1: Initial application interface*
+Installed Burp Suite Community Edition and opened it.
 
-![Environment Configuration](Screenshot%202025-10-17%20193102.png)
-*Figure 2: Testing environment setup*
+Configured the browser to proxy through Burp (127.0.0.1:8080).
 
-### Access Configuration
+Performed a test login on the Juice Shop demo so the login request would appear in Burp Proxy → HTTP history.
 
-![Application Access](Screenshot%202025-10-17%20193121.png)
-*Figure 3: Accessing the application*
+Sent the captured request to Repeater, edited the password field, and resent multiple times using different payloads.
 
----
+Inspected responses for redirects, cookies, SQL error messages, reflected payloads, or other indicators.
 
-## Security Testing Methodology
+Saved screenshots at each step.
 
-Our testing approach follows industry-standard methodologies:
+Steps with screenshots & captions
+1) Visiting Burp Suite website
 
-1. **Information Gathering** - Reconnaissance and fingerprinting
-2. **Vulnerability Assessment** - Identifying security weaknesses
-3. **Exploitation** - Testing discovered vulnerabilities
-4. **Documentation** - Recording findings and evidence
+Visited the official site to download Burp Suite Community Edition.
 
----
+<img width="926" height="199" alt="Screenshot 2025-10-17 193029" src="https://github.com/user-attachments/assets/98b1e0aa-725b-4a7c-b1a4-ea84c28fdc63" />
 
-## Vulnerabilities Discovered
+Caption: Browser window on the Burp/PortSwigger site before downloading the Community installer.
 
-### 5.1 Initial Reconnaissance
+2) Downloading the installer
 
-During the initial phase, we explored the application structure and identified potential attack vectors.
+Started the download for the Windows installer (Community Edition).
 
-![Application Interface](Screenshot%202025-10-17%20193748.png)
-*Figure 4: Application main interface*
+<img width="676" height="167" alt="Screenshot 2025-10-17 193102" src="https://github.com/user-attachments/assets/ba4df58c-da2b-469f-b3b0-310cf3c74145" />
 
-![Navigation Analysis](Screenshot%202025-10-17%20193803.png)
-*Figure 5: Exploring navigation structure*
+<img width="1159" height="295" alt="Screenshot 2025-10-17 193121" src="https://github.com/user-attachments/assets/49319b3c-747b-4896-8b73-b59da53543cf" />
 
-![Feature Discovery](Screenshot%202025-10-17%20193828.png)
-*Figure 6: Application features*
 
-![Endpoint Discovery](Screenshot%202025-10-17%20193846.png)
-*Figure 7: Identifying API endpoints*
+Caption: Download page / download started — installer .exe is being downloaded.
 
-### 5.2 Authentication Testing
+3) Running the installer
 
-Authentication mechanisms were thoroughly tested to identify potential weaknesses.
+Ran the installer and completed the setup wizard.
 
-![Login Interface](Screenshot%202025-10-17%20193905.png)
-*Figure 8: Login interface analysis*
+<img width="411" height="202" alt="Screenshot 2025-10-17 193748" src="https://github.com/user-attachments/assets/5a4dea5f-2cd2-4af3-b059-22eb9a78f31a" />
 
-![Authentication Flow](Screenshot%202025-10-17%20193926.png)
-*Figure 9: Authentication flow examination*
+<img width="621" height="520" alt="Screenshot 2025-10-17 193803" src="https://github.com/user-attachments/assets/1e772fce-fb27-40a8-9485-a5dc2c8a6022" />
 
-![Credential Testing](Screenshot%202025-10-17%20194024.png)
-*Figure 10: Testing authentication mechanisms*
+<img width="621" height="521" alt="Screenshot 2025-10-17 193828" src="https://github.com/user-attachments/assets/730856dd-58e1-4b5e-906a-f5bcb8be2c7d" />
 
-![Session Management](Screenshot%202025-10-17%20194036.png)
-*Figure 11: Session management analysis*
+<img width="623" height="526" alt="Screenshot 2025-10-17 193926" src="https://github.com/user-attachments/assets/648168e4-ebeb-46b5-9001-d6acd3371c0c" />
 
-![Response Analysis](Screenshot%202025-10-17%20194150.png)
-*Figure 12: Authentication response analysis*
+Caption: Installer progress / installation completed dialog (shows final stage of installing Burp).
 
-### 5.3 Network Analysis
+4) Burp Suite opened (main UI)
+<img width="992" height="499" alt="Screenshot 2025-10-17 194024" src="https://github.com/user-attachments/assets/de40f16e-52d2-4ed3-9c67-34d7d982c799" />
 
-Network traffic was intercepted and analyzed using browser developer tools.
+<img width="627" height="542" alt="Screenshot 2025-10-17 194036" src="https://github.com/user-attachments/assets/304ebf59-3bcf-423c-a935-68ccf02adec3" />
 
-![Network Tab Overview](Screenshot%202025-10-17%20195706.png)
-*Figure 13: Network traffic monitoring*
+Launched Burp Suite — main window with tabs (Proxy, Repeater, Decoder, etc.) visible.
 
-![Request Analysis](Screenshot%202025-10-17%20195721.png)
-*Figure 14: HTTP request inspection*
 
-![Response Headers](Screenshot%202025-10-17%20195743.png)
-*Figure 15: Response header analysis*
+Caption: Burp Suite main window after launch. Repeater, Proxy and other tabs are visible.
 
-![Payload Inspection](Screenshot%202025-10-17%20195803.png)
-*Figure 16: Request payload examination*
 
-![API Communication](Screenshot%202025-10-17%20195816.png)
-*Figure 17: API communication patterns*
+5) Confirming proxy capture
 
-### 5.4 Deep Dive Analysis
+   <img width="1919" height="1079" alt="Screenshot 2025-10-17 195721" src="https://github.com/user-attachments/assets/9fc9ff67-0085-4f99-9b73-c690d9fe947c" />
 
-![Security Header Analysis](Screenshot%202025-10-17%20203002.png)
-*Figure 18: Security headers examination*
+<img width="1467" height="926" alt="Screenshot 2025-10-17 195743" src="https://github.com/user-attachments/assets/5a2d69e4-afba-4a52-903a-dcd57cbe2cc7" />
 
-![CORS Configuration](Screenshot%202025-10-17%20203028.png)
-*Figure 19: CORS policy analysis*
+<img width="939" height="884" alt="Screenshot 2025-10-17 195706" src="https://github.com/user-attachments/assets/8045e7c4-6297-4d83-a92a-677e800e653f" />
 
-### 5.5 Advanced Testing
+<img width="954" height="380" alt="Screenshot 2025-10-17 195816" src="https://github.com/user-attachments/assets/ca4f2d48-3d6f-426c-8d0c-dc8804fda553" />
 
-![Login Endpoint Testing](Screenshot%202025-10-17%20211740.png)
-*Figure 20: Login endpoint detailed analysis*
 
-![Request Manipulation](Screenshot%202025-10-17%20212430.png)
-*Figure 21: Request manipulation testing*
+Visited the Juice Shop site while browser was proxied and confirmed the request appeared in Burp Proxy → HTTP history.
 
-![Response Codes](Screenshot%202025-10-17%20212802.png)
-*Figure 22: HTTP response code analysis*
 
-![Error Handling](Screenshot%202025-10-17%20212902.png)
-*Figure 23: Error handling mechanisms*
+Caption: Example of a captured HTTP request shown in Burp Proxy/HTTP history — this is what I used to send to Repeater.
 
-![Authentication Bypass Attempts](Screenshot%202025-10-17%20213400.png)
-*Figure 24: Testing authentication bypass*
+6) Login request in Repeater (captured JSON)
 
-![Final Analysis](Screenshot%202025-10-17%20213524.png)
-*Figure 25: Comprehensive security analysis*
+   <img width="902" height="865" alt="Screenshot 2025-10-17 211740" src="https://github.com/user-attachments/assets/62088659-4c59-41a6-8bc4-75167713686b" />
 
----
+<img width="955" height="990" alt="Screenshot 2025-10-17 212802" src="https://github.com/user-attachments/assets/310049bc-b0b5-48a6-aae1-da3b1816b6ae" />
 
-## Tools Used
+Sent the login request to Repeater. The left pane shows the raw JSON body with email and password fields.
 
-### Primary Tools
-- **Browser Developer Tools** - Network analysis, request inspection
-- **OWASP Juice Shop** - Vulnerable web application for testing
-- **Network Tab** - HTTP/HTTPS traffic monitoring
 
-### Analysis Techniques
-- HTTP request/response inspection
-- Header analysis
-- Cookie and session token examination
-- CORS policy testing
-- Authentication mechanism testing
+Caption: Repeater left pane showing the captured JSON login request (ready to be edited). This is the request I modified for testing.
 
----
+7) Editing the password value (example payload)
+   <img width="958" height="794" alt="Screenshot 2025-10-17 212902" src="https://github.com/user-attachments/assets/70558e24-eb27-4209-8bf3-81a1393f353f" />
 
-## Detailed Analysis
+<img width="959" height="971" alt="Screenshot 2025-10-17 213400" src="https://github.com/user-attachments/assets/fd4c16ae-b785-488b-8374-53882c27cd58" />
 
-### Key Findings
+Edited only the password value in the JSON body to try a test payload and prepared to send.
 
-1. **Authentication Vulnerabilities**
-   - Login endpoint analysis revealed potential weaknesses
-   - HTTP 401 responses indicate authentication failures
-   - Session management requires further investigation
 
-2. **Network Security**
-   - CORS headers present: `access-control-allow-origin: *`
-   - Content-Type: `text/html; charset=utf-8`
-   - Response size: 923 B (26 B compressed)
+Caption: Repeater showing the edited request (password field changed). I only changed the password value and left other fields intact (e.g., CSRF token if present).
 
-3. **API Endpoints**
-   - Login endpoint: `/rest/user/login`
-   - Request method: POST
-   - Status codes: 401 (Unauthorized)
+8) Repeater response view (after send)
 
-### Security Headers Observed
+   <img width="959" height="971" alt="Screenshot 2025-10-17 213400" src="https://github.com/user-attachments/assets/fa6f5dc7-fa87-4763-8a99-15653693f348" />
 
-```
-access-control-allow-origin: *
-content-length: 26
-content-type: text/html; charset=utf-8
-date: Fri, 17 Oct 2025 15:31:47 GMT
-etag: W/"1a-JRJxVK+smzAr3QQve2mDSG+3Eus"
-feature-policy: payment 'self'
-```
+<img width="952" height="987" alt="Screenshot 2025-10-17 213524" src="https://github.com/user-attachments/assets/c460c022-1408-402d-a3d6-b8fec4846895" />
 
----
+Checked the Response pane for status, headers and body after sending the modified request.
 
-## Recommendations
 
-### Immediate Actions
+#Repeater right pane showing response headers/body after a send. I inspected these fields for redirects, tokens, Set-Cookie or error messages.
 
-1. **Strengthen Authentication**
-   - Implement multi-factor authentication
-   - Add rate limiting to prevent brute force attacks
-   - Use secure password policies
+9) Additional attempts & payloads (examples)
 
-2. **Improve Security Headers**
-   - Restrict CORS policy (avoid wildcards)
-   - Implement Content Security Policy (CSP)
-   - Add X-Frame-Options and X-Content-Type-Options
+Repeated the edit/send cycle with several payloads and recorded responses. The screenshots show a few different requests/responses captured during the session.
 
-3. **Session Management**
-   - Use secure, HTTP-only cookies
-   - Implement proper session timeout mechanisms
-   - Generate cryptographically secure session tokens
 
-### Long-term Improvements
+#Another Repeater view after testing a different payload. Kept a record of each attempt to compare responses.
 
-1. Regular security audits
-2. Implementation of Web Application Firewall (WAF)
-3. Security awareness training for developers
-4. Automated security testing in CI/CD pipeline
+10) Final response checks
 
----
+Checked final responses for any evidence (login success token, redirects, SQL errors or reflected payloads). Nothing obvious was found in the captured screenshots.
 
-## Conclusion
 
-This security assessment of the OWASP Juice Shop application successfully identified multiple vulnerabilities and security concerns. The findings demonstrate common web application security issues that exist in real-world applications.
+#Final verification — response bodies and headers were inspected for signs of vulnerability. All documented attempts showed normal failure behavior in the screenshots.
 
-### Learning Outcomes
+Payloads tried
 
-- Understanding of common web vulnerabilities
-- Experience with security testing methodologies
-- Practical knowledge of network traffic analysis
-- Awareness of defensive security measures
+I used the following payloads in the password field (one at a time) from Repeater:
 
-### Next Steps
+wrongpass
 
-1. Further testing of identified vulnerabilities
-2. Attempt to exploit discovered weaknesses (in controlled environment)
-3. Document remediation strategies
-4. Prepare comprehensive security report
+wrongpass'
 
----
+' OR '1'='1
 
-## Disclaimer
+admin'--
 
-⚠️ **Important Notice**
+') OR ('1'='1
 
-This testing was conducted on the OWASP Juice Shop, which is an intentionally vulnerable application designed for security training. All testing activities were performed in a controlled, legal environment for educational purposes only.
+"' OR "1"="1
 
-**Never attempt to exploit vulnerabilities on systems you do not own or have explicit permission to test.**
+<script>alert(1)</script> (tested where applicable in text fields)
 
----
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa (long string)
 
-## References
+test%27%20OR%20%271%27%3D%271 (URL-encoded variant)
 
-- [OWASP Top 10](https://owasp.org/www-project-top-ten/)
-- [OWASP Juice Shop Project](https://owasp.org/www-project-juice-shop/)
-- [Web Security Testing Guide](https://owasp.org/www-project-web-security-testing-guide/)
+Observations
 
----
+The login request was a JSON POST with email and password fields — visible in Repeater.
 
-**Repository:** Defensive Cybersecurity - Task 2  
-**Institution:** KHEC  
-**Course:** Cybersecurity  
-**Date:** October 17, 2025
+Each edited payload was sent from Repeater and the responses were inspected for status, Location, Set-Cookie, and response body content.
+
+From the screenshots and the tests I ran, I did not observe any authentication bypass, SQL error output, or reflected script execution. Responses looked like normal failure behavior.
+
+Findings
+
+Tested: manual edits of the login JSON via Burp Repeater.
+
+Vulnerabilities found: none in the documented screenshots/attempts.
