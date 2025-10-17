@@ -52,7 +52,8 @@ This repository documents a manual testing session focused on the login flow of 
 
 Visited the official site to download Burp Suite Community Edition.
 
-![Visiting Burp Suite site](screenshots/Screenshot%202025-10-17%20193029.png)  
+![Visiting Burp Suite site](<img width="926" height="199" alt="Screenshot 2025-10-17 193029" src="https://github.com/user-attachments/assets/cdbfefb7-eeff-4cb0-a283-59b41abf3bb1" />)
+  
 *Caption: Browser on the PortSwigger site before downloading the Community installer.*
 
 ---
@@ -152,4 +153,5 @@ Checked final responses for any evidence (login success token, redirects, SQL er
 ## Payloads tried
 
 I used the following payloads in the password field (one at a time) from Repeater:
+
 
