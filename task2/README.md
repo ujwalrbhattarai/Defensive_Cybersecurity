@@ -25,7 +25,6 @@
 5. [Observations](#observations)  
 6. [Findings](#findings)  
 7. [Suggestions](#suggestions)  
-8. [Appendix — full screenshot list](#appendix---full-screenshot-list)
 
 ---
 
@@ -51,8 +50,9 @@ This repository documents a manual testing session focused on the login flow of 
 ### Step 1: Visiting Burp Suite website
 
 Visited the official site to download Burp Suite Community Edition.
+<img width="926" height="199" alt="Screenshot 2025-10-17 193029" src="https://github.com/user-attachments/assets/935142d2-a623-4d19-bde8-a1bcd9754015" />
 
-![Visiting Burp Suite site](<img width="926" height="199" alt="Screenshot 2025-10-17 193029" src="https://github.com/user-attachments/assets/cdbfefb7-eeff-4cb0-a283-59b41abf3bb1" />)
+![Visiting Burp Suite site]
   
 *Caption: Browser on the PortSwigger site before downloading the Community installer.*
 
@@ -61,9 +61,13 @@ Visited the official site to download Burp Suite Community Edition.
 ### Step 2: Downloading the installer
 
 Started the download for the Windows installer (Community Edition).
+<img width="676" height="167" alt="Screenshot 2025-10-17 193102" src="https://github.com/user-attachments/assets/14259c81-2a00-4e03-b477-7019cbd04f54" />
 
-![Download started](screenshots/Screenshot%202025-10-17%20193102.png)  
-![Download page](screenshots/Screenshot%202025-10-17%20193121.png)  
+<img width="1159" height="295" alt="Screenshot 2025-10-17 193121" src="https://github.com/user-attachments/assets/ffefeba5-d8d1-47b7-afa8-3eea521a9937" />
+
+![Download page] 
+![Download started] 
+
 *Caption: Download page and installer download in progress.*
 
 ---
@@ -72,10 +76,11 @@ Started the download for the Windows installer (Community Edition).
 
 Ran the installer and completed the setup wizard.
 
-![Installer progress 1](screenshots/Screenshot%202025-10-17%20193748.png)  
-![Installer progress 2](screenshots/Screenshot%202025-10-17%20193803.png)  
-![Installer progress 3](screenshots/Screenshot%202025-10-17%20193828.png)  
-![Installer progress 4](screenshots/Screenshot%202025-10-17%20193926.png)  
+<img width="621" height="521" alt="Screenshot 2025-10-17 193828" src="https://github.com/user-attachments/assets/b44134a0-96ef-45e0-8949-cc36ab6b1823" />
+<img width="622" height="515" alt="Screenshot 2025-10-17 193846" src="https://github.com/user-attachments/assets/877968ef-78a6-43bd-91f1-329e756e6726" />
+<img width="623" height="526" alt="Screenshot 2025-10-17 193926" src="https://github.com/user-attachments/assets/978f4528-902e-4d39-bbcb-b1773c7298b6" />
+
+![Installer progress] 
 *Caption: Installer progress screens and final installation steps.*
 
 ---
@@ -83,9 +88,11 @@ Ran the installer and completed the setup wizard.
 ### Step 4: Burp Suite opened (main UI)
 
 Launched Burp Suite — main window with tabs (Proxy, Repeater, Decoder, etc.) visible.
+<img width="992" height="499" alt="Screenshot 2025-10-17 194024" src="https://github.com/user-attachments/assets/61e3d4cc-c8cf-4bbc-828a-09c23e4a3bf8" />
+<img width="627" height="542" alt="Screenshot 2025-10-17 194036" src="https://github.com/user-attachments/assets/720046a5-009e-488b-a33f-1e89aecf0af5" />
+<img width="938" height="706" alt="Screenshot 2025-10-17 194150" src="https://github.com/user-attachments/assets/5c4d44c8-dc77-4e07-9803-f384f39a22dc" />
 
-![Burp main window 1](screenshots/Screenshot%202025-10-17%20194024.png)  
-![Burp main window 2](screenshots/Screenshot%202025-10-17%20194036.png)  
+![Burp main window].  
 *Caption: Burp Suite main window after launch with Repeater and Proxy tabs visible.*
 
 ---
@@ -93,11 +100,13 @@ Launched Burp Suite — main window with tabs (Proxy, Repeater, Decoder, etc.) v
 ### Step 5: Confirming proxy capture
 
 Visited the Juice Shop site while the browser was proxied and confirmed requests appeared in Burp Proxy → HTTP history.
+<img width="939" height="884" alt="Screenshot 2025-10-17 195706" src="https://github.com/user-attachments/assets/36e90c09-cee3-4db2-afcc-206244a0927b" />
 
-![Captured traffic 1](screenshots/Screenshot%202025-10-17%20195721.png)  
-![Captured traffic 2](screenshots/Screenshot%202025-10-17%20195743.png)  
-![Captured traffic 3](screenshots/Screenshot%202025-10-17%20195706.png)  
-![Captured traffic 4](screenshots/Screenshot%202025-10-17%20195816.png)  
+<img width="1919" height="1079" alt="Screenshot 2025-10-17 195721" src="https://github.com/user-attachments/assets/760023e5-9506-4f7d-84dc-72cc60248857" />
+<img width="1467" height="926" alt="Screenshot 2025-10-17 195743" src="https://github.com/user-attachments/assets/f1b4c6c5-4f9b-4240-8720-f7a7d043988b" />
+<img width="954" height="380" alt="Screenshot 2025-10-17 195816" src="https://github.com/user-attachments/assets/e462debf-4c0f-480c-9fd7-87b08c070989" />
+
+![Captured traffic]. 
 *Caption: Example of captured HTTP requests shown in Burp Proxy/HTTP history — used to send to Repeater.*
 
 ---
@@ -105,9 +114,9 @@ Visited the Juice Shop site while the browser was proxied and confirmed requests
 ### Step 6: Login request in Repeater (captured JSON)
 
 Sent the login request to Repeater. The left pane shows the raw JSON body with `email` and `password` fields.
+<img width="902" height="865" alt="Screenshot 2025-10-17 211740" src="https://github.com/user-attachments/assets/13106036-ae4d-4e4d-9071-82f426314a05" />
 
-![Repeater left pane 1](screenshots/Screenshot%202025-10-17%20211740.png)  
-![Repeater left pane 2](screenshots/Screenshot%202025-10-17%20212802.png)  
+![Repeater left pane] 
 *Caption: Repeater left pane showing the captured JSON login request (ready to be edited).*
 
 ---
@@ -115,9 +124,12 @@ Sent the login request to Repeater. The left pane shows the raw JSON body with `
 ### Step 7: Editing the password value (example payload)
 
 Edited only the `password` value in the JSON body to try a test payload and prepared to send.
+<img width="908" height="639" alt="Screenshot 2025-10-17 212430" src="https://github.com/user-attachments/assets/8611bbe5-0543-481c-a2c3-cb3fa7e3fcdf" />
+<img width="955" height="990" alt="Screenshot 2025-10-17 212802" src="https://github.com/user-attachments/assets/92aa326d-fe9b-4da8-b28d-89fe739eaf81" />
 
-![Edited request 1](screenshots/Screenshot%202025-10-17%20212902.png)  
-![Edited request 2](screenshots/Screenshot%202025-10-17%20213400.png)  
+<img width="958" height="794" alt="Screenshot 2025-10-17 212902" src="https://github.com/user-attachments/assets/2b21ba60-6c12-4b28-baa6-4d8cd3c63e00" />
+
+![Edited request].  
 *Caption: Repeater showing the edited request (password field changed). Only the password was modified; other fields were left intact.*
 
 ---
@@ -125,9 +137,9 @@ Edited only the `password` value in the JSON body to try a test payload and prep
 ### Step 8: Repeater response view (after send)
 
 Checked the Response pane for status, headers and body after sending the modified request.
+<img width="959" height="971" alt="Screenshot 2025-10-17 213400" src="https://github.com/user-attachments/assets/499cb346-5035-4de4-aa6e-edad0a837218" />
 
-![Repeater response 1](screenshots/Screenshot%202025-10-17%20213524.png)  
-![Repeater response 2](screenshots/Screenshot%202025-10-17%20213524.png)  
+![Repeater response].
 *Caption: Repeater right pane showing response headers/body after a send. I inspected these for redirects, tokens, Set-Cookie or error messages.*
 
 ---
@@ -135,8 +147,9 @@ Checked the Response pane for status, headers and body after sending the modifie
 ### Step 9: Additional attempts & payloads
 
 Repeated the edit/send cycle with several payloads and recorded responses. The screenshots show a few different requests/responses captured during the session.
+<img width="952" height="987" alt="Screenshot 2025-10-17 213524" src="https://github.com/user-attachments/assets/171b99dc-44e2-4891-95ce-19ef9bfe7795" />
 
-![Another Repeater view](screenshots/Screenshot%202025-10-17%20213748.png)  
+![Another Repeater view]. 
 *Caption: Another Repeater view after testing a different payload. Kept a record of each attempt to compare responses.*
 
 ---
@@ -153,5 +166,42 @@ Checked final responses for any evidence (login success token, redirects, SQL er
 ## Payloads tried
 
 I used the following payloads in the password field (one at a time) from Repeater:
+wrongpass
+wrongpass'
+' OR '1'='1
+admin'--
+') OR ('1'='1
+"' OR "1"="1
+
+<script>alert(1)</script> (tested where applicable)
+
+
+---
+
+## Observations
+
+- The login request was a JSON POST with `email` and `password` fields (visible in Repeater).  
+- Each edited payload was sent from Repeater and the responses were inspected for **status**, **Location**, **Set-Cookie**, and response body content.  
+- From the screenshots and the tests I ran, I did not observe any authentication bypass, SQL error output, or reflected script execution. Responses looked like normal failure behavior.
+
+---
+
+## Findings
+
+- **Tested:** manual edits of the login JSON using Burp Repeater.  
+- **Vulnerabilities found:** none in the documented screenshots/attempts.
+
+---
+
+## Suggestions
+
+Even though I didn’t find anything in these tests, these practices are good for login endpoints:
+
+- Use prepared statements / parameterized queries (prevent SQLi).  
+- Validate and sanitize user input server-side.  
+- Use generic error messages to avoid account enumeration.  
+- Set cookies with `HttpOnly` and `Secure` and regenerate session IDs on login.
+ 
+
 
 
