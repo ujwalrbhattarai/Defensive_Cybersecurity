@@ -1,7 +1,6 @@
-<img width="952" height="987" alt="Screenshot 2025-10-17 213524" src="https://github.com/user-attachments/assets/f9d21308-730e-4adf-9931-514310aef67f" /><img width="954" height="380" alt="Screenshot 2025-10-17 195816" src="https://github.com/user-attachments/assets/5e678fab-7078-451c-91b0-2db707f0b8ad" />
-Task 2 – Web Login Testing (OWASP Juice Shop)
+Task 2 
 
-Target: https://preview.owasp-juice.shop
+Target website i used : https://preview.owasp-juice.shop
 
 Tool: Burp Suite Community Edition
 Summary: Captured and replayed the login request using Burp Repeater and tested several payloads manually. No vulnerabilities found in the documented attempts.
@@ -184,3 +183,4 @@ Findings
 Tested: manual edits of the login JSON via Burp Repeater.
 
 Vulnerabilities found: none in the documented screenshots/attempts.
+
