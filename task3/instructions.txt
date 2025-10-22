@@ -1,0 +1,8 @@
+Place your Task 3 code, notes, and artifacts in this folder.
+
+Suggested structure:
+- src/  # code files
+- data/ # test data
+- docs/ # any documentation
+
+When ready, commit and push the `task3` folder to your remote repository.
