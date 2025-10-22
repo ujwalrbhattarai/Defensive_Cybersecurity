@@ -199,6 +199,31 @@ This exercise demonstrates how phishing campaigns are created in a controlled en
 - Using safe browsing tools and sandboxed viewers for attachments.  
 - Running phishing simulations ethically: only against consenting users or within an approved training environment.
 
+---- How to Identify a Phishing Email
+
+Suspicious Sender: Check the full email address — it may look similar to a trusted one but with small changes (e.g., support@paypa1.com).
+
+Urgent or Threatening Language: Phrases like “Your account will be suspended!” push you to act fast without thinking.
+
+Mismatched or Fake Links: Hover over links — if the real URL differs from the text shown or looks strange, it’s likely phishing.
+
+Unexpected Attachments: Attachments you didn’t expect, especially .zip, .exe, or .docm files, are dangerous.
+
+Poor Grammar or Design Errors: Many phishing emails contain spelling mistakes, odd phrasing, or low-quality logos.
+
+Requests for Personal Info: Legitimate companies never ask for passwords, OTPs, or credit card details via email.
+
+---- How to Avoid Phishing
+
+Don’t click links or open attachments unless you trust the sender and were expecting the message.
+
+Verify directly from official sources — visit websites manually instead of clicking links in emails.
+
+Use strong passwords and enable MFA (multi-factor authentication) for all important accounts.
+
+Keep your system, browser, and antivirus updated to block known phishing and malware sites.
+
+Be cautious of urgent messages — pause, think, and confirm before acting.
 ---
 
 ## Appendix: Helpful commands & links
