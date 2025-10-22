@@ -223,7 +223,6 @@ Use strong passwords and enable MFA (multi-factor authentication) for all import
 
 Keep your system, browser, and antivirus updated to block known phishing and malware sites.
 
-Be cautious of urgent messages — pause, think, and confirm before acting.
 ---
 
 ## Appendix: Helpful commands & links
