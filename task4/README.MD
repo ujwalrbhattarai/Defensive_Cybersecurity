@@ -39,7 +39,7 @@ Opened the Windows Firewall configuration interface using:
 ```cmd
 wf.msc
 ````
-
+![image alt](https://github.com/ujwalrbhattarai/Defensive_Cybersecurity/blob/45e3c517588d2262560a9934e6f4de6675ad4820/task4/Screenshot%202025-10-29%20181529.png)
 
 This launched *Windows Defender Firewall with Advanced Security*, where inbound and outbound rules are managed.
 
