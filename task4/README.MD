@@ -160,9 +160,3 @@ Successfully configured and tested Windows Firewall rules using the `netsh advfi
 Port 23 (Telnet) was blocked, verifying that inbound traffic was denied, while port 22 (SSH) was allowed as expected.
 This task provided a clear understanding of how Windows Firewall can be managed via command line and how specific rules affect network access.
 
----
-
-
-Would you like me to add small GitHub-style emojis before each heading (like in your Task 3 README) and make the spacing identical to that file’s layout?
-```
-
