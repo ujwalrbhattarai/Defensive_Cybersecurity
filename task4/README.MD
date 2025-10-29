@@ -42,14 +42,12 @@ wf.msc
 ![image alt](https://github.com/ujwalrbhattarai/Defensive_Cybersecurity/blob/45e3c517588d2262560a9934e6f4de6675ad4820/task4/Screenshot%202025-10-29%20181529.png)
 
 This launched *Windows Defender Firewall with Advanced Security*, where inbound and outbound rules are managed.
+![image alt](https://github.com/ujwalrbhattarai/Defensive_Cybersecurity/blob/main/task4/Screenshot%202025-10-29%20182104.png?raw=true)
 
 Checked the active profiles via:
 
 ```cmd
 netsh advfirewall show allprofiles
-```
-
-🖼️ *Screenshot 1: Windows Firewall window / Command output here*
 
 ---
 
@@ -60,22 +58,18 @@ Listed all existing firewall rules to understand the current configuration.
 ```cmd
 netsh advfirewall firewall show rule name=all
 ```
-
-🖼️ *Screenshot 2: List of current rules*
+![image alt](https://github.com/ujwalrbhattarai/Defensive_Cybersecurity/blob/main/task4/Screenshot%202025-10-29%20181743.png?raw=true)
 
 ---
 
 ### 3️⃣ Add a Rule to Block Inbound Traffic on Port 23 (Telnet)
 
 Added a new rule to block Telnet connections (port 23):
+![image alt](https://github.com/ujwalrbhattarai/Defensive_Cybersecurity/blob/main/task4/Screenshot%202025-10-29%20182056.png?raw=true)
 
 ```cmd
 netsh advfirewall firewall add rule name="Block Telnet" protocol=TCP dir=in localport=23 action=block
 ```
-
-🖼️ *Screenshot 3: Rule successfully added*
-
----
 
 ### 4️⃣ Test the Rule
 
@@ -85,22 +79,22 @@ Enabled it using the DISM feature command:
 ```cmd
 dism /online /Enable-Feature /FeatureName:TelnetClient
 ```
+![image alt](https://github.com/ujwalrbhattarai/Defensive_Cybersecurity/blob/main/task4/Screenshot%202025-10-29%20182351.png?raw=true)
 
 After installation, tested the rule:
 
 ```cmd
 telnet localhost 23
 ```
+![image alt](https://github.com/ujwalrbhattarai/Defensive_Cybersecurity/blob/main/task4/Screenshot%202025-10-29%20182452.png?raw=true)
 
 Result:
 
 ```
 Connecting to localhost...Could not open connection to the host, on port 23: Connect failed
 ```
-
+![image alt](https://github.com/ujwalrbhattarai/Defensive_Cybersecurity/blob/main/task4/Screenshot%202025-10-29%20182520.png?raw=true)
 ✅ The firewall successfully blocked inbound Telnet traffic.
-
-🖼️ *Screenshot 4: Telnet command and output*
 
 ---
 
@@ -111,10 +105,7 @@ To test the opposite scenario, created a rule to allow inbound SSH:
 ```cmd
 netsh advfirewall firewall add rule name="Allow SSH" protocol=TCP dir=in localport=22 action=allow
 ```
-
-🖼️ *Screenshot 5: SSH allow rule confirmation*
-
----
+![image alt](https://github.com/ujwalrbhattarai/Defensive_Cybersecurity/blob/main/task4/Screenshot%202025-10-29%20182651.png?raw=true)
 
 ### 6️⃣ Remove the Test Block Rule
 
@@ -123,10 +114,8 @@ After completing the test, removed the Telnet block rule to restore the firewall
 ```cmd
 netsh advfirewall firewall delete rule name="Block Telnet"
 ```
+![image alt](https://github.com/ujwalrbhattarai/Defensive_Cybersecurity/blob/main/task4/Screenshot%202025-10-29%20182722.png?raw=true)
 
-🖼️ *Screenshot 6: Rule deletion confirmation*
-
----
 
 ## 🧠 How Firewall Filters Traffic
 
@@ -145,14 +134,15 @@ This mechanism ensures only trusted communications are allowed while unwanted or
 
 > 📂 *All related screenshots (commands, rules, Telnet test results) are included in the `screenshots` folder.*
 
-1. Windows Firewall window
-2. Current rule listing
-3. Added rule (Block Telnet)
-4. Telnet test output
-5. Allow SSH rule
-6. Deleted rule confirmation
-
----
+![image alt](https://github.com/ujwalrbhattarai/Defensive_Cybersecurity/blob/45e3c517588d2262560a9934e6f4de6675ad4820/task4/Screenshot%202025-10-29%20181529.png)
+![image alt](https://github.com/ujwalrbhattarai/Defensive_Cybersecurity/blob/main/task4/Screenshot%202025-10-29%20182104.png?raw=true)
+![image alt](https://github.com/ujwalrbhattarai/Defensive_Cybersecurity/blob/main/task4/Screenshot%202025-10-29%20181743.png?raw=true)
+![image alt](https://github.com/ujwalrbhattarai/Defensive_Cybersecurity/blob/main/task4/Screenshot%202025-10-29%20182056.png?raw=true)
+![image alt](https://github.com/ujwalrbhattarai/Defensive_Cybersecurity/blob/main/task4/Screenshot%202025-10-29%20182351.png?raw=true)
+![image alt](https://github.com/ujwalrbhattarai/Defensive_Cybersecurity/blob/main/task4/Screenshot%202025-10-29%20182452.png?raw=true)
+![image alt](https://github.com/ujwalrbhattarai/Defensive_Cybersecurity/blob/main/task4/Screenshot%202025-10-29%20182520.png?raw=true)
+![image alt](https://github.com/ujwalrbhattarai/Defensive_Cybersecurity/blob/main/task4/Screenshot%202025-10-29%20182651.png?raw=true)
+![image alt](https://github.com/ujwalrbhattarai/Defensive_Cybersecurity/blob/main/task4/Screenshot%202025-10-29%20182722.png?raw=true)
 
 ## 🏁 Conclusion
 
