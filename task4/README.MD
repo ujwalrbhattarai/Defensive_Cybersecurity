@@ -15,7 +15,6 @@
 - [How Firewall Filters Traffic](#how-firewall-filters-traffic)
 - [Screenshots](#screenshots)
 - [Conclusion](#conclusion)
-- [Author](#author)
 
 ---
 
